@@ -52,10 +52,10 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
     private void registerUser() {
         final String name = editTextName.getText().toString().trim();
         final String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
+        final String password = editTextPassword.getText().toString().trim();
         final String job = editTextjob.getText().toString().trim();
 
-        if (name.isEmpty()) {
+         if (name.isEmpty()) {
             editTextName.setError(getString(R.string.input_error_name));
             editTextName.requestFocus();
             return;
@@ -100,7 +100,8 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
                             User user = new User(
                                     name,
                                     email,
-                                    job
+                                    job,
+                                    password
                             );
 
                             FirebaseDatabase.getInstance().getReference("users")
@@ -122,6 +123,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
                         }
                     }
                 });
+
 
     }
 

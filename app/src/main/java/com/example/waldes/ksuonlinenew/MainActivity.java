@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-    Button btnlog;
+    Button btn1,btn2;
 
     /** Called when the activity is first created. */
     @Override
@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnlog = (Button) findViewById(R.id.button2);
-        btnlog.setOnClickListener(this);
+        btn1 = (Button) findViewById(R.id.button2);
+        btn1.setOnClickListener(this);
+        btn2 = (Button) findViewById(R.id.btnlog);
+        btn2.setOnClickListener(this);
         /*myviewPager = (ViewPager) findViewById(R.id.main_tabs_pager);
         myTabsAccessAdapter = new TabaccessAdapter(getSupportFragmentManager());
         myviewPager.setAdapter(myTabsAccessAdapter);
@@ -40,10 +42,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button2:
+           case  R.id.button2:
                 Intent intent = new Intent(this, Signup.class);
                 startActivity(intent);
                 break;
+            case  R.id.btnlog:
+                intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                break;
+
+
 
             default:
                 break;

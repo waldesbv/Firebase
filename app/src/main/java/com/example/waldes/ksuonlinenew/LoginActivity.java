@@ -157,9 +157,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (dataUser.child("isVerified").getValue().toString().equals("unverified"))
                 {
 
-                    Intent in = new Intent( LoginActivity.this, Profile.class);
-                    in.putExtra("USER_KEY" , dataUser.child("userKey").getValue().toString());
-                    startActivity(in);
+
 
                 }else
                 {
